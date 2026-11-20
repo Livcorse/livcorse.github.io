@@ -18,7 +18,7 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans)}
 a{color:var(--blue)}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 
 /* top bar */
@@ -56,7 +56,8 @@ h2{font-size:28px;margin:0 0 6px}
 .sub{color:var(--dim);margin:0 0 16px}
 .shot{background:#e9e3d6;border-bottom:1px solid var(--line)}
 .shot img{width:100%}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;padding:22px;background:#1c2329}
+.duo img{width:100%;border-radius:8px;aspect-ratio:1000/560;object-fit:cover;box-shadow:0 0 0 6px #0b0f12,0 6px 18px rgba(0,0,0,.5)}
 ul.feat{margin:0 0 18px;padding-left:20px}
 ul.feat li{margin:3px 0}
 .cols{display:grid;grid-template-columns:1.4fr 1fr;gap:28px}
@@ -205,8 +206,8 @@ html[lang=en] [data-en]{display:revert}
   <!-- DX Live Panel -->
   <article class="card" id="dx-live-panel">
     <div class="shot duo">
-      <img src="panou_spoturi.jpg" alt="DX Live Panel – spots" loading="lazy" width="1200" height="701">
-      <img src="panou_vreme.jpg" alt="DX Live Panel – weather" loading="lazy" width="1200" height="691">
+      <img src="panou_spoturi.jpg" alt="DX Live Panel – spots" loading="lazy" width="1000" height="560">
+      <img src="panou_vreme.jpg" alt="DX Live Panel – weather" loading="lazy" width="1000" height="560">
     </div>
     <div class="body">
       <h3>DX Live Panel <span class="tag t-gh"><span data-ro>pe GitHub</span><span data-en>on GitHub</span></span></h3>
