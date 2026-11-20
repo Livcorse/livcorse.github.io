@@ -141,8 +141,8 @@ html[lang=en] [data-en]{display:revert}
 
 <section id="proiecte">
   <h2><span data-ro>Proiecte</span><span data-en>Projects</span></h2>
-  <p class="lead" data-ro>Două sunt gata de descărcat. Celelalte două merg în stația mea și sunt încă în lucru.</p>
-  <p class="lead" data-en>Two are ready to download. The other two run in my station and are still in progress.</p>
+  <p class="lead" data-ro>Trei sunt gata de descărcat. Ceasul de stație merge în stația mea și e încă în lucru.</p>
+  <p class="lead" data-en>Three are ready to download. The station clock runs in my station and is still in progress.</p>
 
   <!-- YO2CR CW -->
   <article class="card" id="yo2cr-cw">
@@ -258,25 +258,60 @@ html[lang=en] [data-en]{display:revert}
   <!-- Rotor -->
   <article class="card" id="rotor">
     <div class="body icon-card">
-      <div class="icon" style="background:var(--amber-soft)">
-        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#a86a00" stroke-width="3" stroke-linecap="round"><circle cx="32" cy="32" r="22"/><path d="M32 10v6M32 48v6M10 32h6M48 32h6"/><path d="M32 32 44 18" stroke-width="4"/><circle cx="32" cy="32" r="3" fill="#a86a00"/></svg>
+      <div class="icon" style="background:var(--green-soft)">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#1f7a4a" stroke-width="3" stroke-linecap="round"><circle cx="32" cy="32" r="22"/><path d="M32 10v6M32 48v6M10 32h6M48 32h6"/><path d="M32 32 44 18" stroke-width="4"/><circle cx="32" cy="32" r="3" fill="#1f7a4a"/></svg>
       </div>
       <div>
-        <h3><span data-ro>Controler de rotor ARCO</span><span data-en>ARCO-style rotator controller</span> <span class="tag t-wip"><span data-ro>în lucru</span><span data-en>in progress</span></span></h3>
-        <p class="sub" data-ro>Controler pentru rotor de antenă făcut acasă (motor DC, potențiometru, 450°), după modelul microHAM ARCO.</p>
-        <p class="sub" data-en>A controller for a home-built antenna rotator (DC motor, potentiometer, 450°), modelled on the microHAM ARCO.</p>
-        <ul class="feat" data-ro>
-          <li>ESP32 + punte BTS7960 + ADS1115 (sau doar relee, comandate direct de ecranul de 7"); capetele de cursă învățate la calibrare.</li>
-          <li>Vorbește rotctld (Hamlib, port 4533) și GS-232A/B pe USB, deci merge cu Log4OM, N1MM, PSTRotator.</li>
-          <li>Pagină web cu actualizare prin Wi-Fi, ecran tactil de 7" ca telecomandă.</li>
-        </ul>
-        <ul class="feat" data-en>
-          <li>ESP32 + BTS7960 bridge + ADS1115 (or relays only, driven straight from the 7" screen); end stops learned during calibration.</li>
-          <li>Speaks rotctld (Hamlib, port 4533) and GS-232A/B over USB, so it works with Log4OM, N1MM, PSTRotator.</li>
-          <li>Web page with Wi-Fi updates, 7" touch screen as a remote.</li>
-        </ul>
-        <p class="note" data-ro>Încă nu e probat pe rotor. Îl pun aici când merge în stația mea.</p>
-        <p class="note" data-en>Not yet tested on the rotator. It will be posted here once it works in my station.</p>
+        <h3><span data-ro>Panou Rotor YO2CR 2.1</span><span data-en>YO2CR Rotor Panel 2.1</span> <span class="tag t-ok"><span data-ro>gata de descărcat</span><span data-en>ready to download</span></span></h3>
+        <p class="sub" data-ro>Un ecran tactil de 7" care comandă rotorul de antenă: atingi harta și antena se întoarce.</p>
+        <p class="sub" data-en>A 7" touch screen that drives your antenna rotator: tap the map and the antenna turns.</p>
+        <div class="cols">
+          <div>
+            <ul class="feat" data-ro>
+              <li>Hartă centrată pe locatorul tău; o atingere îndreaptă antena spre locul ales.</li>
+              <li>Butoane CW / CCW / STOP, SP / LP, direcția în grade și zone rapide.</li>
+              <li>Prin PC cu Hamlib rotctld: Yaesu G-450, G-650, G-800, G-1000, G-2800 (DXA / SDX / DXC) și partea de azimut a G-5500, cu interfață GS-232A/B sau GS-232. În principiu, orice rotor de azimut suportat de rotctld; gândit pentru rotoare cu 450°.</li>
+              <li>Mod cu relee comandate direct de ecran (MCP23017 + ADS1115): <b>experimental</b>, încă neprobat pe un rotor real.</li>
+              <li>Se încarcă din browser, fără instalare (esptool-js, la adresa 0x0).</li>
+            </ul>
+            <ul class="feat" data-en>
+              <li>Map centred on your locator; one tap points the antenna where you want.</li>
+              <li>CW / CCW / STOP, SP / LP, heading in degrees and quick zones.</li>
+              <li>Through a PC with Hamlib rotctld: Yaesu G-450, G-650, G-800, G-1000, G-2800 (DXA / SDX / DXC) and the azimuth part of the G-5500, with a GS-232A/B or GS-232 interface. In principle any azimuth rotator that rotctld supports; designed for 450° rotators.</li>
+              <li>Relays driven directly by the screen (MCP23017 + ADS1115): <b>experimental</b>, not yet tried on a real rotator.</li>
+              <li>Flashed from the browser, nothing to install (esptool-js, address 0x0).</li>
+            </ul>
+            <div class="btns">
+              <a class="btn main" href="https://github.com/Livcorse/livcorse.github.io/releases/download/yo2cr-rotor-2.1/YO2CR_Rotor_2.1.zip">⬇ <span data-ro>Descarcă kitul</span><span data-en>Download kit</span> <small>.zip · 0,9 MB</small></a>
+              <a class="btn" href="https://github.com/Livcorse/livcorse.github.io/releases/download/yo2cr-rotor-2.1/Manual_YO2CR_Rotor_RO.pdf">📄 Manual RO</a>
+              <a class="btn" href="https://github.com/Livcorse/livcorse.github.io/releases/download/yo2cr-rotor-2.1/Manual_YO2CR_Rotor_EN.pdf">📄 Manual EN</a>
+            </div>
+            <p class="note" data-ro>Probat pe 20.11.2026 pe ecranul real, cu rotctld și un rotor simulat Hamlib: legătura Wi-Fi, citirea poziției, mers la direcție, CW/CCW, STOP. Kitul conține firmware-ul, manualele, licența și scripturile pentru PC.</p>
+            <p class="note" data-en>Tested on 20.11.2026 on the real display, with rotctld and a Hamlib simulated rotor: Wi-Fi link, position readout, go to heading, CW/CCW, STOP. The kit contains the firmware, manuals, licence and PC scripts.</p>
+          </div>
+          <div>
+            <div class="box">
+              <h4 data-ro>De ce ai nevoie</h4><h4 data-en>What you need</h4>
+              <ul data-ro>
+                <li>placa Waveshare ESP32-S3-Touch-LCD-7 (7", 800×480)</li>
+                <li>un PC cu Hamlib rotctld (Hamlib se instalează separat) și interfața rotorului</li>
+                <li>Wi-Fi în shack</li>
+                <li>textele de pe ecran sunt în română</li>
+              </ul>
+              <ul data-en>
+                <li>Waveshare ESP32-S3-Touch-LCD-7 board (7", 800×480)</li>
+                <li>a PC with Hamlib rotctld (Hamlib is installed separately) and your rotator interface</li>
+                <li>Wi-Fi in the shack</li>
+                <li>the on-screen texts are in Romanian</li>
+              </ul>
+            </div>
+            <div class="box" style="margin-top:12px">
+              <h4 data-ro>Licență</h4><h4 data-en>Licence</h4>
+              <p style="margin:0" data-ro>Freeware: gratuit pentru radioamatori. Nu se vinde și nu se modifică.</p>
+              <p style="margin:0" data-en>Freeware: free for radio amateurs. Not to be sold or modified.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </article>
