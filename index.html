@@ -163,10 +163,10 @@ html[lang=en] [data-en]{display:revert}
   <p class="lead" data-en>Three are ready to download. The station clock runs in my station and is still in progress.</p>
 
   <!-- YO2CR CW -->
-  <article class="card" id="yo2cr-cw">
-    <div class="shot"><img src="yo2cr_cw.jpg" alt="YO2CR CW 2.8" loading="lazy" width="1308" height="1000"></div>
+  <article class="card" id="yo2cr-cw" data-ver="2.9">
+    <div class="shot"><img src="yo2cr_cw.jpg" alt="YO2CR CW 2.9" loading="lazy" width="1700" height="1000"></div>
     <div class="body">
-      <h3>YO2CR CW 2.8 <span class="tag t-ok"><span data-ro>gata de descărcat</span><span data-en>ready to download</span></span></h3>
+      <h3>YO2CR CW <span class="cw-v">2.9</span> <span class="tag t-ok"><span data-ro>gata de descărcat</span><span data-en>ready to download</span></span></h3>
       <p class="sub" data-ro>Program de telegrafie pentru Windows, cu decodor neural, cluster și log.</p>
       <p class="sub" data-en>A CW program for Windows, with a neural decoder, cluster and log.</p>
       <div class="cols">
@@ -178,7 +178,8 @@ html[lang=en] [data-en]{display:revert}
             <li>Cluster filtrat după modul în care ești, cu hartă a benzii și cascadă audio. Un clic pe spot și split-ul se pune singur.</li>
             <li>Memorii F1–F12, log ADIF, trimitere în Log4OM, mod concurs, QRZ.</li>
             <li>Îți arată dacă țara e nouă, neconfirmată sau confirmată, și te anunță când n-ai mai descărcat confirmările LoTW.</li>
-            <li><b>Nou în 2.8:</b> pornește pe mai multe calculatoare (componenta Microsoft e în kit, mesaj clar dacă procesorul e prea vechi); mărimea și tema de culori se schimbă pe loc, iar fereastra nu mai iese din ecran; ecran rearanjat (Tuner, STOP lângă SEND, QRZ lângă indicativ, pe SSB/DATA se ascund comenzile doar pentru CW); clic pe un indicativ din textul decodat îl pune la lucru; Ajutor → Autotest și Întrebări și discuții; corecturi la vremea {WX}, Log4OM și JTDX; toate mesajele traduse în engleză.</li>
+            <li class="cw-nou"><b>Nou în 2.9:</b> CW din placa de sunet, pentru stațiile fără interfață de manipulare; „Învață decodorul” din QSO-urile tale, pentru toți (de la 50 de QSO-uri, rămâne doar dacă citește mai bine); setări fără repornire; butoane AM și DATA; Esc fără blocare; clustere noi (RBN, W3LPL, NC7J).</li>
+            <li><b>Din 2.8:</b> pornește pe mai multe calculatoare (componenta Microsoft e în kit, mesaj clar dacă procesorul e prea vechi); mărimea și tema de culori se schimbă pe loc, iar fereastra nu mai iese din ecran; ecran rearanjat (Tuner, STOP lângă SEND, QRZ lângă indicativ, pe SSB/DATA se ascund comenzile doar pentru CW); clic pe un indicativ din textul decodat îl pune la lucru; Ajutor → Autotest și Întrebări și discuții; corecturi la vremea {WX}, Log4OM și JTDX; toate mesajele traduse în engleză.</li>
             <li><b>Din 2.7: decodor DeepCW îmbunătățit</b>, antrenat de YO2CR pe semnale reale de bandă: în teste, cu o treime mai puține litere greșite (de la 44% la 29%) și de 3–4 ori mai puține pe semnale bune; găsește mai multe indicative.</li>
             <li><b>Din 2.5:</b> CW prin CAT pentru stațiile cu un singur port USB (Icom IC-7300, IC-705, IC-9700): nu mai trebuie al doilea port.</li>
             <li><b>Din 2.4:</b> meniuri și în engleză, găsește singur porturile stației (Yaesu), caută stația după nume (ex. „746 pro”), mesaje clare la CAT, decodor DeepCW reantrenat, cu mai puține greșeli.</li>
@@ -190,15 +191,16 @@ html[lang=en] [data-en]{display:revert}
             <li>Cluster filtered by your current mode, with a band map and audio waterfall. Click a spot and split is set for you.</li>
             <li>F1–F12 memories, ADIF log, sending to Log4OM, contest mode, QRZ.</li>
             <li>Shows whether a country is new, unconfirmed or confirmed, and reminds you when your LoTW confirmations are out of date.</li>
-            <li><b>New in 2.8:</b> starts on more PCs (the Microsoft component is in the kit, a clear message when the processor is too old); size and colour theme change at once and the window no longer runs off the screen; rearranged screen (Tuner, STOP next to SEND, QRZ next to the callsign, CW-only controls hidden on SSB/DATA); click a callsign in the decoded text to work it; Help → Self-test and Questions and discussion; fixes for the {WX} weather, Log4OM and JTDX; every message translated to English.</li>
+            <li class="cw-nou"><b>New in 2.9:</b> CW from the sound card, for radios without a keying interface; “Teach the decoder” from your own QSOs, for everyone (from 50 QSOs, kept only if it reads better); settings without restart; AM and DATA buttons; Esc without lock; new clusters (RBN, W3LPL, NC7J).</li>
+            <li><b>Since 2.8:</b> starts on more PCs (the Microsoft component is in the kit, a clear message when the processor is too old); size and colour theme change at once and the window no longer runs off the screen; rearranged screen (Tuner, STOP next to SEND, QRZ next to the callsign, CW-only controls hidden on SSB/DATA); click a callsign in the decoded text to work it; Help → Self-test and Questions and discussion; fixes for the {WX} weather, Log4OM and JTDX; every message translated to English.</li>
             <li><b>Since 2.7: improved DeepCW decoder</b>, trained by YO2CR on real band signals: in tests about a third fewer wrong letters (from 44% to 29%) and 3–4 times fewer on good signals; finds more callsigns.</li>
             <li><b>Since 2.5:</b> CW via CAT for radios with a single USB port (Icom IC-7300, IC-705, IC-9700): no second port needed.</li>
             <li><b>Since 2.4:</b> English menus, finds the radio's COM ports by itself (Yaesu), radio search by name (e.g. “746 pro”), clear CAT messages, retrained DeepCW decoder with fewer errors.</li>
           </ul>
           <div class="btns">
-            <a class="btn main" href="https://github.com/Livcorse/livcorse.github.io/releases/download/yo2cr-cw-2.8/YO2CR_CW_Setup_2.8.exe">⬇ <span data-ro>Descarcă kitul</span><span data-en>Download installer</span> <small>.exe · 242 MB</small></a>
-            <a class="btn" href="https://github.com/Livcorse/livcorse.github.io/releases/download/yo2cr-cw-2.8/Manual_YO2CR_CW_RO.pdf">📄 Manual RO</a>
-            <a class="btn" href="https://github.com/Livcorse/livcorse.github.io/releases/download/yo2cr-cw-2.8/Manual_YO2CR_CW_EN.pdf">📄 Manual EN</a>
+            <a class="btn main" id="cw-kit" href="https://github.com/Livcorse/livcorse.github.io/releases/download/yo2cr-cw-2.9/YO2CR_CW_Setup_2.9.exe">⬇ <span data-ro>Descarcă kitul</span><span data-en>Download installer</span> <small>.exe · <span id="cw-mb">243</span> MB · <span class="cw-v">2.9</span></small></a>
+            <a class="btn" id="cw-man-ro" href="https://github.com/Livcorse/livcorse.github.io/releases/download/yo2cr-cw-2.9/Manual_YO2CR_CW_RO.pdf">📄 Manual RO</a>
+            <a class="btn" id="cw-man-en" href="https://github.com/Livcorse/livcorse.github.io/releases/download/yo2cr-cw-2.9/Manual_YO2CR_CW_EN.pdf">📄 Manual EN</a>
             <a class="btn" href="https://groups.io/g/yo2cr" target="_blank" rel="noopener">💬 <span data-ro>Discuții</span><span data-en>Discussions</span></a>
           </div>
           <a class="kofi" href="https://ko-fi.com/yo2cr" target="_blank" rel="noopener">☕ <span data-ro>Dacă îți plac programele, îmi poți oferi o cafea</span><span data-en>Support my projects on Ko-fi</span></a>
@@ -209,14 +211,20 @@ html[lang=en] [data-en]{display:revert}
           <details class="old" id="versiuni-anterioare">
             <summary><span data-ro>Versiuni anterioare</span><span data-en>Previous versions</span></summary>
             <table class="oldlist">
-              <!-- la versiunea nouă: rândul versiunii curente se mută aici, primul -->
-              <tr>
+              <!-- rândurile YO2CR CW (class cw-old) sunt refăcute singure din release-urile GitHub; Consola rămâne fixă -->
+              <tr class="cw-old">
+                <td>YO2CR CW 2.8</td>
+                <td class="d">24.11.2026</td>
+                <td><span data-ro>pornește pe mai multe calculatoare, mărime și temă pe loc, autotest</span><span data-en>starts on more PCs, instant size and theme, self-test</span><br><code>SHA-256 66C60C241E2357900C06DC8211C1AA3DAC1380E1A4CB9CD8811E89F8FDCB92D0</code></td>
+                <td><a href="https://github.com/Livcorse/livcorse.github.io/releases/download/yo2cr-cw-2.8/YO2CR_CW_Setup_2.8.exe">⬇ .exe · 242 MB</a></td>
+              </tr>
+              <tr class="cw-old">
                 <td>YO2CR CW 2.7</td>
                 <td class="d">22.11.2026</td>
                 <td><span data-ro>decodor DeepCW îmbunătățit, antrenat centralizat</span><span data-en>improved DeepCW decoder, trained centrally</span><br><code>SHA-256 826ED1FD60048F3102E26AA7D011E2B1192D75F004F5EEAE08C77C9E22975EFA</code></td>
                 <td><a href="https://github.com/Livcorse/livcorse.github.io/releases/download/yo2cr-cw-2.7/YO2CR_CW_Setup_2.7.exe">⬇ .exe · 240 MB</a></td>
               </tr>
-              <tr>
+              <tr class="cw-old">
                 <td>YO2CR CW 2.1</td>
                 <td class="d">20.11.2026</td>
                 <td><span data-ro>prima versiune publică (fără actualizare automată)</span><span data-en>the first public version (no automatic update)</span><br><code>SHA-256 9819B5C347260471D643D551F726F6C5D410EEB2081B36EF2DA3C1A1DD53D593</code></td>
@@ -416,8 +424,8 @@ html[lang=en] [data-en]{display:revert}
   <div class="steps">
     <div class="step">
       <b data-ro>Descarcă și deschide kitul</b><b data-en>Download and open the installer</b>
-      <p data-ro>Dublu clic pe <code>YO2CR_CW_Setup_2.8.exe</code>.</p>
-      <p data-en>Double-click <code>YO2CR_CW_Setup_2.8.exe</code>.</p>
+      <p data-ro>Dublu clic pe <code>YO2CR_CW_Setup_<span class="cw-v">2.9</span>.exe</code>.</p>
+      <p data-en>Double-click <code>YO2CR_CW_Setup_<span class="cw-v">2.9</span>.exe</code>.</p>
     </div>
     <div class="step">
       <b data-ro>Apasă „Mai multe informații”</b><b data-en>Click "More info"</b>
@@ -426,12 +434,12 @@ html[lang=en] [data-en]{display:revert}
     </div>
     <div class="step">
       <b data-ro>Apoi „Rulează oricum”</b><b data-en>Then "Run anyway"</b>
-      <div class="fake" data-ro>Aplicație: YO2CR_CW_Setup_2.8.exe<br>Editor: Editor necunoscut<br><span class="k">Rulează oricum</span></div>
-      <div class="fake" data-en>App: YO2CR_CW_Setup_2.8.exe<br>Publisher: Unknown publisher<br><span class="k">Run anyway</span></div>
+      <div class="fake" data-ro>Aplicație: YO2CR_CW_Setup_<span class="cw-v">2.9</span>.exe<br>Editor: Editor necunoscut<br><span class="k">Rulează oricum</span></div>
+      <div class="fake" data-en>App: YO2CR_CW_Setup_<span class="cw-v">2.9</span>.exe<br>Publisher: Unknown publisher<br><span class="k">Run anyway</span></div>
     </div>
   </div>
-  <p class="note" data-ro>Amprenta SHA-256 a kitului, ca să verifici că e cel original:<br><code>66C60C241E2357900C06DC8211C1AA3DAC1380E1A4CB9CD8811E89F8FDCB92D0</code></p>
-  <p class="note" data-en>SHA-256 of the installer, to check it is the original:<br><code>66C60C241E2357900C06DC8211C1AA3DAC1380E1A4CB9CD8811E89F8FDCB92D0</code></p>
+  <p class="note" data-ro>Amprenta SHA-256 a kitului, ca să verifici că e cel original:<br><code class="cw-sha">FD89D2299247E6787EEC0E4658D0B9C31241FB1984AC2EF0FCDBACF16B65F9C5</code></p>
+  <p class="note" data-en>SHA-256 of the installer, to check it is the original:<br><code class="cw-sha">FD89D2299247E6787EEC0E4658D0B9C31241FB1984AC2EF0FCDBACF16B65F9C5</code></p>
   <p class="note" data-ro>La prima pornire programul îți cere indicativul, stația, portul COM și placa de sunet. Totul e explicat în manual.</p>
   <p class="note" data-en>On first start the program asks for your callsign, radio, COM port and sound card. Everything is explained in the manual.</p>
 </section>
@@ -478,6 +486,74 @@ html[lang=en] [data-en]{display:revert}
   var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
   set(saved || ((navigator.language||'').toLowerCase().indexOf('ro')===0 ? 'ro' : 'en'));
   btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+})();
+
+// YO2CR CW: the newest release on GitHub fills the card by itself (25.11.2026). What is written in the page stays as it
+// is when GitHub does not answer. A new release only needs its kit (+ the two PDFs) and, in its text, the hidden lines
+//   <!-- nou-ro: ce e nou, pe scurt -->   <!-- nou-en: what is new, short -->
+// (optional <!-- scurt-ro: … --> / <!-- scurt-en: … --> for the row in "Versiuni anterioare").
+(function(){
+  var card=document.getElementById('yo2cr-cw'); if(!card||!window.fetch) return;
+  var API='https://api.github.com/repos/Livcorse/livcorse.github.io/releases?per_page=100';
+  var KIT=/^YO2CR_CW_Setup_.*\.exe$/i;
+  function ver(t){var m=/^yo2cr-cw-(\d+)\.(\d+)(?:\.(\d+))?$/.exec(t||'');return m?[+m[1],+m[2],+(m[3]||0)]:null}
+  function cmp(a,b){for(var i=0;i<3;i++){if(a[i]!==b[i])return a[i]-b[i]}return 0}
+  function vs(v){return v[0]+'.'+v[1]+(v[2]?'.'+v[2]:'')}
+  function mark(body,key){var m=new RegExp('<!--\\s*'+key+':\\s*([\\s\\S]*?)-->').exec(body||'');return m?m[1].trim():''}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function asset(r,re){var a=r.assets||[];for(var i=0;i<a.length;i++){if(re.test(a[i].name))return a[i]}return null}
+  function sha(a){return ((a&&a.digest)||'').replace(/^sha256:/,'').toUpperCase()}
+  function mb(a){return Math.round(a.size/1048576)}
+  function nouText(lang){var li=card.querySelector('ul.feat[data-'+lang+'] li.cw-nou');if(!li)return '';
+    var t=li.textContent.replace(/^[^:]*:\s*/,'');return t.split(';')[0].trim()}
+  function apply(list){
+    var cw=(list||[]).filter(function(r){return !r.draft&&!r.prerelease&&ver(r.tag_name)&&asset(r,KIT)})
+                     .sort(function(a,b){return cmp(ver(b.tag_name),ver(a.tag_name))});
+    if(!cw.length)return;
+    var cur=cw[0], V=vs(ver(cur.tag_name)), staticV=card.getAttribute('data-ver');
+    // the page already names a newer version than GitHub shows (uploaded before the release is public): leave it
+    if(cmp(ver(cur.tag_name), ver('yo2cr-cw-'+staticV)||[0,0,0])<0)return;
+    var kit=asset(cur,KIT), mro=asset(cur,/_RO\.pdf$/i), men=asset(cur,/_EN\.pdf$/i);
+    var staticNou={ro:nouText('ro'),en:nouText('en')};
+    document.getElementById('cw-kit').href=kit.browser_download_url;
+    document.getElementById('cw-mb').textContent=mb(kit);
+    if(mro)document.getElementById('cw-man-ro').href=mro.browser_download_url;
+    if(men)document.getElementById('cw-man-en').href=men.browser_download_url;
+    document.querySelectorAll('.cw-v').forEach(function(e){e.textContent=V});
+    if(sha(kit))document.querySelectorAll('.cw-sha').forEach(function(e){e.textContent=sha(kit)});
+    if(V!==staticV){            // a newer version: its „Nou în” line on top, the page's one becomes „Din …”
+      [['ro','Nou în','Din'],['en','New in','Since']].forEach(function(L){
+        var li=card.querySelector('ul.feat[data-'+L[0]+'] li.cw-nou'); if(!li)return;
+        li.querySelector('b').textContent=L[2]+' '+staticV+':';
+        li.classList.remove('cw-nou');
+        var t=mark(cur.body,'nou-'+L[0]);
+        if(t){var n=document.createElement('li');n.className='cw-nou';n.innerHTML='<b>'+L[1]+' '+esc(V)+':</b> '+esc(t);li.parentNode.insertBefore(n,li)}
+      });
+    }
+    // „Versiuni anterioare”: every older YO2CR CW release, newest first, above the Consola rows (which stay)
+    var table=card.querySelector('table.oldlist'); if(!table)return;
+    var have={}; table.querySelectorAll('tr.cw-old').forEach(function(tr){have[tr.cells[0].textContent.trim()]=tr});
+    var anchor=table.querySelector('tr:not(.cw-old)');
+    var rows=cw.slice(1).map(function(r){
+      var name='YO2CR CW '+vs(ver(r.tag_name)); if(have[name])return have[name];
+      var k=asset(r,KIT), v=vs(ver(r.tag_name));
+      var sro=mark(r.body,'scurt-ro')||mark(r.body,'nou-ro')||(v===staticV?staticNou.ro:'');
+      var sen=mark(r.body,'scurt-en')||mark(r.body,'nou-en')||(v===staticV?staticNou.en:'');
+      var d=(r.published_at||'').slice(0,10).split('-').reverse().join('.');
+      var tr=document.createElement('tr');tr.className='cw-old';
+      tr.innerHTML='<td>'+esc(name)+'</td><td class="d">'+esc(d)+'</td><td><span data-ro>'+esc(sro)+'</span><span data-en>'+esc(sen)+
+        '</span><br><code>SHA-256 '+esc(sha(k))+'</code></td><td><a href="'+esc(k.browser_download_url)+'">⬇ .exe · '+mb(k)+' MB</a></td>';
+      return tr;
+    });
+    table.querySelectorAll('tr.cw-old').forEach(function(tr){tr.parentNode.removeChild(tr)});
+    rows.forEach(function(tr){ if(anchor)anchor.parentNode.insertBefore(tr,anchor); else (table.tBodies[0]||table).appendChild(tr) });
+  }
+  window.__cwApply=apply;          // for testing the page with a made-up list
+  var cached=null; try{cached=JSON.parse(sessionStorage.getItem('cwrel')||'null')}catch(e){}
+  if(cached&&Date.now()-cached.t<3600e3){apply(cached.d);return}
+  fetch(API,{headers:{'Accept':'application/vnd.github+json'}}).then(function(r){return r.ok?r.json():null}).then(function(d){
+    if(!d)return; try{sessionStorage.setItem('cwrel',JSON.stringify({t:Date.now(),d:d}))}catch(e){} apply(d);
+  }).catch(function(){});
 })();
 </script>
 </body>
