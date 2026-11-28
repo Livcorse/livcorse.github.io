@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MeteoFrame – YO2CR</title>
+<meta name="description" content="MeteoFrame: ecran meteo și ramă foto pentru stația ta meteo, pe placa Waveshare ESP32-S3-Touch-LCD-7. Gratuit, se instalează din browser.">
+<script type="module" src="https://unpkg.com/esp-web-tools@10.0.1/dist/web/install-button.js?module"></script>
+<style>
+:root{--bg:#f7f3ea;--paper:#fffdf8;--ink:#1f2a33;--dim:#5d6a74;--line:#e3dccd;--red:#b4321f;--blue:#1d5f8a;--blue-soft:#e0edf5;--green:#1f7a4a;--green-soft:#dff0e5;--amber-soft:#f8ecd2;
+  --mono:"Cascadia Mono",Consolas,Menlo,monospace;--sans:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans)}
+a{color:var(--blue)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.top{position:sticky;top:0;z-index:5;background:rgba(247,243,234,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:18px;height:60px}
+.brand{font:700 20px var(--mono);letter-spacing:1px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand i{width:12px;height:12px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px #f6e1dc}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--paper);margin-left:auto}
+.lang button{border:0;background:none;padding:6px 12px;font:600 13px var(--sans);color:var(--dim);cursor:pointer}
+.lang button.on{background:var(--ink);color:#fff}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.1;margin:40px 0 8px}
+h2{font-size:26px;margin:34px 0 10px}
+.sub{font-size:19px;color:var(--dim);margin:0 0 22px}
+.tag{font:700 12px var(--sans);text-transform:uppercase;letter-spacing:.6px;padding:3px 10px;border-radius:999px;background:var(--green-soft);color:var(--green);vertical-align:middle}
+.screen{background:#1c2329;border-radius:18px;padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.screen img{border-radius:8px;box-shadow:0 0 0 6px #0b0f12,0 6px 18px rgba(0,0,0,.5)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px 26px;margin:22px 0}
+.cols{display:grid;grid-template-columns:1.3fr 1fr;gap:26px}
+ul{padding-left:20px;margin:6px 0 12px}
+li{margin:3px 0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:15px;cursor:pointer}
+.btn:hover{border-color:var(--ink)}
+.btn.main{background:var(--red);border-color:var(--red);color:#fff}
+.btn small{font-weight:400;opacity:.8}
+.box{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15px}
+.box h4{margin:0 0 6px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:15px}
+.step::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;margin-bottom:6px}
+.warn{background:var(--amber-soft);border-radius:10px;padding:10px 14px;font-size:15px;margin-top:12px}
+code{font:14px var(--mono);background:var(--bg);padding:1px 6px;border-radius:5px;border:1px solid var(--line);word-break:break-all}
+.kofi{display:flex;gap:18px;align-items:center}
+.kofi img{width:120px;height:120px;border-radius:8px;border:1px solid var(--line)}
+.small{font-size:14px;color:var(--dim)}
+footer{padding:30px 0 50px;color:var(--dim);font-size:14px;text-align:center}
+esp-web-install-button [slot=activate]{display:inline-flex}
+[data-en]{display:none}
+html[lang=en] [data-ro]{display:none}
+html[lang=en] [data-en]{display:revert}
+@media (max-width:820px){.cols,.steps,.screen{grid-template-columns:1fr}.wrap{padding:0 16px}.card{padding:18px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><i></i>YO2CR</a>
+  <div class="lang" role="group" aria-label="Limba / Language"><button type="button" data-set="ro">RO</button><button type="button" data-set="en">EN</button></div>
+</div></header>
+
+<main class="wrap">
+  <h1>MeteoFrame <span class="tag"><span data-ro>gratuit · 1.0</span><span data-en>free · 1.0</span></span></h1>
+  <p class="sub" data-ro>Ecran meteo și ramă foto pentru stația ta meteo, pe placa Waveshare cu ecran tactil de 7".</p>
+  <p class="sub" data-en>A weather display and photo frame for your weather station, on the Waveshare 7" touch board.</p>
+
+  <div class="screen">
+    <img data-ro src="ecran_ro.png" alt="MeteoFrame – pagina principală" width="800" height="480">
+    <img data-ro src="pronostic_ro.png" alt="MeteoFrame – pronostic" width="800" height="480">
+    <img data-en src="ecran_en.png" alt="MeteoFrame – main page" width="800" height="480">
+    <img data-en src="pronostic_en.png" alt="MeteoFrame – outlook" width="800" height="480">
+  </div>
+
+  <div class="card cols">
+    <div>
+      <ul data-ro>
+        <li>Datele stației tale prin WiFi: temperatură, umiditate, vânt, ploaie, presiune, UV, ușor de citit de la distanță.</li>
+        <li>Prognoza pe 7 zile, grafice pe 3 zile, barometru cu prognoză (Zambretti), ploaia din următoarele 3 ore.</li>
+        <li>Avertizările ANM și stațiile ANM din jur (România), recorduri, confortul din casă.</li>
+        <li>Ramă foto cu pozele tale, alarme pe ecran și pe telefon (ntfy), termometre Bluetooth, APRS.</li>
+        <li>Română și engleză, unități metrice sau imperiale. Fără licență, fără cont, fără cloud.</li>
+      </ul>
+      <ul data-en>
+        <li>Your station's data over WiFi: temperature, humidity, wind, rain, pressure, UV, easy to read from across the room.</li>
+        <li>7-day forecast, 3-day charts, a forecasting barometer (Zambretti), rain in the next 3 hours.</li>
+        <li>Romanian ANM warnings and nearby stations, records, indoor comfort.</li>
+        <li>Photo frame with your own photos, alarms on screen and phone (ntfy), Bluetooth thermometers, APRS.</li>
+        <li>English and Romanian, metric or imperial units. No licence, no account, no cloud.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h4 data-ro>De ce ai nevoie</h4><h4 data-en>What you need</h4>
+      <ul data-ro>
+        <li>placa <b>Waveshare ESP32-S3-Touch-LCD-7</b> (800×480; nu varianta 7B)</li>
+        <li>o stație cu <b>Customized / Ecowitt</b> în WS View Plus (Sainlogic WS3500, Ecowitt, Froggit, Misol...) sau Wunderground</li>
+        <li>WiFi 2,4 GHz (sau hotspotul telefonului)</li>
+      </ul>
+      <ul data-en>
+        <li><b>Waveshare ESP32-S3-Touch-LCD-7</b> board (800×480; not the 7B)</li>
+        <li>a station with <b>Customized / Ecowitt</b> in WS View Plus (Sainlogic WS3500, Ecowitt, Froggit, Misol...) or Wunderground</li>
+        <li>2.4 GHz WiFi (or your phone's hotspot)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="instalare"><span data-ro>Instalare din browser</span><span data-en>Install from the browser</span></h2>
+  <div class="steps">
+    <div class="step"><b data-ro>Leagă placa</b><b data-en>Connect the board</b>
+      <p data-ro>Cu un cablu USB-C de date la calculator (de obicei portul UART al plăcii). Folosește Chrome sau Edge.</p>
+      <p data-en>With a USB-C data cable to the computer (usually the board's UART port). Use Chrome or Edge.</p></div>
+    <div class="step"><b data-ro>Apasă Instalează</b><b data-en>Press Install</b>
+      <p data-ro>Alege portul plăcii din listă, apoi confirmă. Durează 1–2 minute.</p>
+      <p data-en>Pick the board's port from the list, then confirm. It takes 1–2 minutes.</p></div>
+    <div class="step"><b data-ro>Configurează</b><b data-en>Set it up</b>
+      <p data-ro>Telefonul pe WiFi <b>MeteoFrame</b> (parola <b>meteo1234</b>), deschide <b>192.168.4.1</b>. Detaliile sunt în manual.</p>
+      <p data-en>Phone on WiFi <b>MeteoFrame</b> (password <b>meteo1234</b>), open <b>192.168.4.1</b>. Details in the manual.</p></div>
+  </div>
+
+  <div class="card">
+    <div class="btns">
+      <esp-web-install-button manifest="manifest.json">
+        <button slot="activate" class="btn main">⚡ <span data-ro>Instalează pe placă</span><span data-en>Install on the board</span></button>
+        <span slot="unsupported" class="warn" data-ro>Browserul tău nu poate scrie pe placă. Deschide pagina în <b>Chrome</b> sau <b>Edge</b>, pe calculator.</span>
+        <span slot="unsupported" class="warn" data-en>Your browser cannot write to the board. Open this page in <b>Chrome</b> or <b>Edge</b> on a computer.</span>
+        <span slot="not-allowed" class="warn">HTTPS needed.</span>
+      </esp-web-install-button>
+      <a class="btn" href="Manual_MeteoFrame_RO.pdf">📄 Manual RO</a>
+      <a class="btn" href="Manual_MeteoFrame_EN.pdf">📄 Manual EN</a>
+    </div>
+    <p class="small" data-ro>Nu apare portul? Încearcă alt cablu sau celălalt port USB-C. Pe Windows mai vechi poate trebui driverul CH343. Dacă nu pornește scrierea: ține BOOT, apasă RESET, eliberează BOOT.</p>
+    <p class="small" data-en>No port? Try another cable or the other USB-C port. Older Windows may need the CH343 driver. If writing won't start: hold BOOT, press RESET, release BOOT.</p>
+    <h4 style="margin:14px 0 4px" data-ro>Fișiere</h4><h4 style="margin:14px 0 4px" data-en>Files</h4>
+    <div class="btns">
+      <a class="btn" href="meteoframe-1.0-update.bin" download>⬇ <span data-ro>Actualizare</span><span data-en>Update</span> <small>.bin · 1,7 MB</small></a>
+      <a class="btn" href="meteoframe-1.0-full.bin" download>⬇ <span data-ro>Complet (esptool, adresa 0)</span><span data-en>Full (esptool, address 0)</span> <small>.bin · 1,8 MB</small></a>
+    </div>
+    <p class="small" data-ro><b>Actualizare</b>: dacă MeteoFrame merge deja, pagina de setări → Actualizare firmware → alegi fișierul. Setările și pozele rămân.</p>
+    <p class="small" data-en><b>Update</b>: if MeteoFrame is already running, settings page → Firmware update → choose the file. Settings and photos are kept.</p>
+  </div>
+
+  <div class="card kofi">
+    <a href="https://ko-fi.com/yo2cr" target="_blank" rel="noopener"><img src="kofi.svg" alt="Ko-fi QR"></a>
+    <div>
+      <b data-ro>MeteoFrame e gratuit, fără licență și fără înregistrare.</b><b data-en>MeteoFrame is free, with no licence key and no registration.</b><br>
+      <span data-ro>Dacă îți place, o cafea ajută: </span><span data-en>If you like it, a coffee helps: </span><a href="https://ko-fi.com/yo2cr" target="_blank" rel="noopener">ko-fi.com/yo2cr</a><br>
+      <span data-ro>Întrebări și idei: </span><span data-en>Questions and ideas: </span><a href="https://groups.io/g/yo2cr" target="_blank" rel="noopener">groups.io/g/yo2cr</a> (#meteo)
+    </div>
+  </div>
+
+  <p class="small" data-ro>Probat pe Sainlogic WS3500 (consola EasyWeather), la YO2CR. Prognoza: Open-Meteo.com (CC BY 4.0). Avertizări: ANM / MeteoAlarm.</p>
+  <p class="small" data-en>Tested with a Sainlogic WS3500 (EasyWeather console) at YO2CR. Forecast: Open-Meteo.com (CC BY 4.0). Warnings: ANM / MeteoAlarm.</p>
+</main>
+<footer>© 2026 YO2CR · <a href="../">yo2cr.ro</a></footer>
+<script>
+(function(){
+  var root=document.documentElement, btns=document.querySelectorAll('.lang button');
+  function set(l){ root.lang=l; btns.forEach(function(b){b.classList.toggle('on',b.dataset.set===l)}); try{localStorage.setItem('lang',l)}catch(e){} }
+  var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
+  set(saved || ((navigator.language||'').toLowerCase().indexOf('ro')===0 ? 'ro' : 'en'));
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+})();
+</script>
+</body>
+</html>
