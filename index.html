@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>YO2CR Proiecte</title>
-<meta name="description" content="Programe și aparate făcute de YO2CR pentru radioamatori: YO2CR CW, DX Live Panel, controler de rotor, ceas de stație.">
+<meta name="description" content="Programe și aparate făcute de YO2CR pentru radioamatori: YO2CR CW, DX Live Panel, MeteoFrame, controler de rotor, ceas de stație.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b4321f'/%3E%3Cpath d='M14 40h8M28 40h22M14 26h22M42 26h8' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
 :root{
@@ -159,8 +159,8 @@ html[lang=en] [data-en]{display:revert}
 
 <section id="proiecte">
   <h2><span data-ro>Proiecte</span><span data-en>Projects</span></h2>
-  <p class="lead" data-ro>Trei sunt gata de descărcat. Ceasul de stație merge în stația mea și e încă în lucru.</p>
-  <p class="lead" data-en>Three are ready to download. The station clock runs in my station and is still in progress.</p>
+  <p class="lead" data-ro>Patru sunt gata de descărcat. Ceasul de stație merge în stația mea și e încă în lucru.</p>
+  <p class="lead" data-en>Four are ready to download. The station clock runs in my station and is still in progress.</p>
 
   <!-- YO2CR CW -->
   <article class="card" id="yo2cr-cw" data-ver="2.9">
@@ -321,6 +321,59 @@ html[lang=en] [data-en]{display:revert}
             <li>Waveshare ESP32-S3-Touch-LCD-7 board (7", 800×480)</li>
             <li>Wi-Fi in the shack</li>
             <li>optional: a QRZ XML key or LoTW account, for worked countries</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- MeteoFrame -->
+  <article class="card" id="meteoframe">
+    <div class="shot duo">
+      <img data-ro src="meteoframe/ecran_ro.png" alt="MeteoFrame – pagina principală" loading="lazy" width="800" height="480">
+      <img data-ro src="meteoframe/pronostic_ro.png" alt="MeteoFrame – pronostic" loading="lazy" width="800" height="480">
+      <img data-en src="meteoframe/ecran_en.png" alt="MeteoFrame – main page" loading="lazy" width="800" height="480">
+      <img data-en src="meteoframe/pronostic_en.png" alt="MeteoFrame – outlook" loading="lazy" width="800" height="480">
+    </div>
+    <div class="body">
+      <h3>MeteoFrame 1.0 <span class="tag t-ok"><span data-ro>nou · gratuit</span><span data-en>new · free</span></span></h3>
+      <p class="sub" data-ro>Ecran meteo și ramă foto pentru stația ta meteo, pe aceeași placă Waveshare de 7".</p>
+      <p class="sub" data-en>A weather display and photo frame for your weather station, on the same Waveshare 7" board.</p>
+      <div class="cols">
+        <div>
+          <ul class="feat" data-ro>
+            <li>Datele stației tale prin WiFi (Customized / Ecowitt sau Wunderground), mari și ușor de citit.</li>
+            <li>Prognoza pe 7 zile, grafice, barometru cu prognoză, ploaia din următoarele 3 ore.</li>
+            <li>Avertizările ANM și stațiile ANM din jur, recorduri, confortul din casă.</li>
+            <li>Ramă foto cu pozele tale, alarme pe telefon (ntfy), termometre Bluetooth, APRS.</li>
+            <li>Se instalează direct din browser (Chrome / Edge), fără alte programe.</li>
+          </ul>
+          <ul class="feat" data-en>
+            <li>Your station's data over WiFi (Customized / Ecowitt or Wunderground), big and easy to read.</li>
+            <li>7-day forecast, charts, a forecasting barometer, rain in the next 3 hours.</li>
+            <li>Romanian ANM warnings and nearby stations, records, indoor comfort.</li>
+            <li>Photo frame with your own photos, phone alarms (ntfy), Bluetooth thermometers, APRS.</li>
+            <li>Installs straight from the browser (Chrome / Edge), nothing else needed.</li>
+          </ul>
+          <div class="btns">
+            <a class="btn main" href="meteoframe/">⚡ <span data-ro>Instalează din browser</span><span data-en>Install from the browser</span></a>
+            <a class="btn" href="meteoframe/Manual_MeteoFrame_RO.pdf">📄 Manual RO</a>
+            <a class="btn" href="meteoframe/Manual_MeteoFrame_EN.pdf">📄 Manual EN</a>
+            <a class="btn" href="https://groups.io/g/yo2cr" target="_blank" rel="noopener">💬 <span data-ro>Discuții</span><span data-en>Discussions</span></a>
+          </div>
+          <a class="kofi" href="https://ko-fi.com/yo2cr" target="_blank" rel="noopener">☕ <span data-ro>Dacă îți plac programele, îmi poți oferi o cafea</span><span data-en>Support my projects on Ko-fi</span></a>
+        </div>
+        <div class="box">
+          <h4 data-ro>De ce ai nevoie</h4><h4 data-en>What you need</h4>
+          <ul data-ro>
+            <li>placa Waveshare ESP32-S3-Touch-LCD-7 (7", 800×480)</li>
+            <li>o stație meteo cu WS View Plus (Sainlogic WS3500, Ecowitt, Froggit, Misol...) sau pe Wunderground</li>
+            <li>WiFi 2,4 GHz</li>
+          </ul>
+          <ul data-en>
+            <li>Waveshare ESP32-S3-Touch-LCD-7 board (7", 800×480)</li>
+            <li>a weather station with WS View Plus (Sainlogic WS3500, Ecowitt, Froggit, Misol...) or on Wunderground</li>
+            <li>2.4 GHz WiFi</li>
           </ul>
         </div>
       </div>
